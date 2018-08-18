@@ -1,5 +1,15 @@
 import React from "react";
 import Link from "gatsby-link";
+import PropTypes from "prop-types";
+import withRoot from "../withRoot";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = theme => ({
+  root: {
+    textAlign: "center",
+    paddingTop: theme.spacing.unit * 20
+  }
+});
 
 class Template extends React.Component {
   render() {
@@ -28,9 +38,9 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
-  children: React.PropTypes.func,
-  location: React.PropTypes.object,
-  route: React.PropTypes.object
+  children: PropTypes.func,
+  location: PropTypes.object,
+  route: PropTypes.object
 };
 
-export default Template;
+export default withRoot(withStyles(styles)(Template));

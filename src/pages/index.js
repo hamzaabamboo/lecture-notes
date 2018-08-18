@@ -2,8 +2,15 @@ import React from "react";
 import Link from "gatsby-link";
 import get from "lodash/get";
 import Helmet from "react-helmet";
-
+import { withStyles } from "@material-ui/core";
 import Bio from "../components/Bio";
+
+const styles = theme => ({
+  root: {
+    textAlign: "center",
+    paddingTop: theme.spacing.unit * 20
+  }
+});
 
 class BlogIndex extends React.Component {
   render() {
@@ -34,7 +41,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex;
+export default withStyles(styles)(BlogIndex);
 
 export const pageQuery = graphql`
   query IndexQuery {

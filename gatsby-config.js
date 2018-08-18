@@ -7,8 +7,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: "pages"
+        path: `${__dirname}/src/pages/notes`,
+        name: "notes"
       }
     },
     {
@@ -32,14 +32,6 @@ module.exports = {
           "gatsby-remark-katex",
           "gatsby-remark-smartypants"
         ]
-      }
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
       }
     },
     `gatsby-plugin-offline`,
