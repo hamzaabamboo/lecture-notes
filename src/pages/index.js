@@ -4,6 +4,9 @@ import get from "lodash/get";
 import Helmet from "react-helmet";
 import { withStyles } from "@material-ui/core";
 import Bio from "../components/Bio";
+import Typography from "@material-ui/core/Typography";
+import SubjectCard from "../components/SubjectCard";
+import { push } from "gatsby-link";
 
 const styles = theme => ({
   root: {
@@ -25,15 +28,20 @@ class BlogIndex extends React.Component {
           const title = get(node, "frontmatter.title") || node.fields.slug;
           const subject = get(node, "frontmatter.subject");
           return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
-                  {title + " - " + subject}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            <SubjectCard
+              title={subject}
+              key={node.fields.slug}
+              onClick={() => push(node.fields.slug)}
+            >
+              <Typography variant="headline" component="h3">
+                {title}
+              </Typography>
+              <Typography component="small">{node.frontmatter.date}</Typography>
+              <Typography
+                component="p"
+                dangerouslySetInnerHTML={{ __html: node.excerpt }}
+              />
+            </SubjectCard>
           );
         })}
       </div>
