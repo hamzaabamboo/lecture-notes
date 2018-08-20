@@ -5,7 +5,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import HomeIcon from "@material-ui/icons/Home";
+import { push } from "gatsby-link";
 import get from "lodash/get";
 
 const styles = {
@@ -27,9 +28,10 @@ const TopAppBar = props => {
           <IconButton
             className={classes.menuButton}
             color="inherit"
-            aria-label="Menu"
+            aria-label="Home"
+            onClick={() => push("/")}
           >
-            <MenuIcon />
+            <HomeIcon />
           </IconButton>
           <Typography variant="title" color="inherit">
             {title}
@@ -40,7 +42,7 @@ const TopAppBar = props => {
   );
 };
 
-AppBar.propTypes = {
+TopAppBar.propTypes = {
   classes: PropTypes.object.isRequired
 };
 

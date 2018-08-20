@@ -2,9 +2,9 @@ import React from "react";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
 import get from "lodash/get";
-
+import rehypeReact from "rehype-react";
 import Bio from "../components/Bio";
-
+import Typography from "@material-ui/core/Typography";
 import "katex/dist/katex.min.css";
 import { withStyles, Grid, Paper } from "@material-ui/core";
 
@@ -17,9 +17,71 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 5
   },
   paper: {
-    padding: theme.spacing.unit
+    padding: theme.spacing.unit * 3
   }
 });
+
+const H1 = ({ children, ...rest }) => (
+  <Typography component="h1" variant="display1" {...rest}>
+    {children}
+  </Typography>
+);
+const H2 = ({ children, ...rest }) => (
+  <Typography component="h2" variant="title" {...rest}>
+    {children}
+  </Typography>
+);
+const H3 = ({ children, ...rest }) => (
+  <Typography component="h3" variant="title" {...rest}>
+    {children}
+  </Typography>
+);
+const H4 = ({ children, ...rest }) => (
+  <Typography component="h4" variant="title" {...rest}>
+    {children}
+  </Typography>
+);
+const H5 = ({ children, ...rest }) => (
+  <Typography component="h5" {...rest}>
+    {children}
+  </Typography>
+);
+const H6 = ({ children, ...rest }) => (
+  <Typography component="h6" {...rest}>
+    {children}
+  </Typography>
+);
+const P = ({ children, ...rest }) => (
+  <Typography component="p" {...rest}>
+    {children}
+  </Typography>
+);
+const Li = ({ children, ...rest }) => (
+  <Typography component="li" {...rest}>
+    {children}
+  </Typography>
+);
+const Ul = ({ children, ...rest }) => (
+  <Typography component="ul" {...rest}>
+    {children}
+  </Typography>
+);
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    h5: H5,
+    h6: H6,
+    p: P,
+    ul: Ul,
+    li: Li
+  }
+}).Compiler;
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
@@ -32,12 +94,14 @@ class BlogPostTemplate extends React.Component {
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-            <h1>{post.frontmatter.title}</h1>
-            <p>{post.frontmatter.date}</p>
-            <div
-              className="content"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
+            <Typography component="h1" variant="display3">
+              {post.frontmatter.title}
+            </Typography>
+            <Typography component="p" variant="subheading">
+              {post.frontmatter.date}
+            </Typography>
+            <br />
+            {renderAst(post.htmlAst)}
             <hr />
             <Bio />
 
@@ -45,7 +109,8 @@ class BlogPostTemplate extends React.Component {
               {previous && (
                 <li>
                   <Link to={previous.fields.slug} rel="prev">
-                    ← {previous.frontmatter.title}
+                    ← {previous.frontmatter.subject} -{" "}
+                    {previous.frontmatter.title}
                   </Link>
                 </li>
               )}
@@ -53,7 +118,7 @@ class BlogPostTemplate extends React.Component {
               {next && (
                 <li>
                   <Link to={next.fields.slug} rel="next">
-                    {next.frontmatter.title} →
+                    {next.frontmatter.subject} - {next.frontmatter.title} →
                   </Link>
                 </li>
               )}
@@ -77,11 +142,11 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      html
+      htmlAst
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM DD, YYYY") 
       }
     }
   }
-`;
+`;  

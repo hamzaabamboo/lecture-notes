@@ -11,11 +11,6 @@ const styles = {
   card: {
     minWidth: 275
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)"
-  },
   title: {
     marginBottom: 16,
     fontSize: 14
@@ -27,7 +22,6 @@ const styles = {
 
 const SubjectCard = props => {
   const { classes, title, children, onClick } = props;
-  const bull = <span className={classes.bullet}>•</span>;
   return (
     <div className={classes.pos} onClick={onClick}>
       <Card className={classes.card}>
