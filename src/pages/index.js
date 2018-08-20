@@ -10,8 +10,9 @@ import { push } from "gatsby-link";
 
 const styles = theme => ({
   root: {
-    textAlign: "center",
-    paddingTop: theme.spacing.unit * 20
+    width: "80%",
+    margin: "0 auto",
+    paddingTop: theme.spacing.unit
   }
 });
 
@@ -19,9 +20,10 @@ class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title");
     const posts = get(this, "props.data.allMarkdownRemark.edges");
+    const { classes } = this.props;
 
     return (
-      <div>
+      <div className={classes.root}>
         <Helmet title={siteTitle} />
         <Bio />
         {posts.map(({ node }) => {
