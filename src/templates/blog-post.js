@@ -22,7 +22,7 @@ const styles = theme => ({
 });
 
 const H1 = ({ children, ...rest }) => (
-  <Typography component="h1" variant="display1" {...rest}>
+  <Typography component="h1" variant="title" {...rest}>
     {children}
   </Typography>
 );
@@ -98,7 +98,7 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.title}
             </Typography>
             <Typography component="p" variant="subheading">
-              {post.frontmatter.date}
+              {post.frontmatter.subject} - {post.frontmatter.date}
             </Typography>
             <br />
             {renderAst(post.htmlAst)}
@@ -145,8 +145,9 @@ export const pageQuery = graphql`
       htmlAst
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY") 
+        subject
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }
-`;  
+`;
