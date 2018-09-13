@@ -39,11 +39,13 @@ module.exports = {
           },
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-katex",
-          "gatsby-remark-smartypants"
+          "gatsby-remark-smartypants",
+          "gatsby-remark-autolink-headers"
         ]
       }
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-sass"
   ]
 };

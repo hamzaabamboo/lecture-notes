@@ -6,12 +6,13 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
-import { push } from "gatsby-link";
 import get from "lodash/get";
 
 const styles = {
   root: {
-    flexGrow: 1
+    position: "relative",
+    flexGrow: 1,
+    zIndex: 9
   },
   menuButton: {
     marginLeft: -18,
@@ -20,7 +21,7 @@ const styles = {
 };
 
 const TopAppBar = props => {
-  const { classes, title } = props;
+  const { classes, title, handleClick } = props;
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -29,7 +30,7 @@ const TopAppBar = props => {
             className={classes.menuButton}
             color="inherit"
             aria-label="Home"
-            onClick={() => push("/")}
+            onClick={() => handleClick()}
           >
             <HomeIcon />
           </IconButton>

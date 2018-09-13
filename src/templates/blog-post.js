@@ -3,82 +3,79 @@ import Helmet from "react-helmet";
 import Link from "gatsby-link";
 import get from "lodash/get";
 import rehypeReact from "rehype-react";
-import Bio from "../components/Bio";
 import Typography from "@material-ui/core/Typography";
 import "katex/dist/katex.min.css";
 import { withStyles, Grid, Paper } from "@material-ui/core";
 
 import "../typography.css";
+import "./content.scss";
 
 const styles = theme => ({
-  root: {
+  page: {
     width: "80%",
     margin: "0 auto",
     paddingTop: theme.spacing.unit * 5
   },
   paper: {
     padding: theme.spacing.unit * 3
+  },
+  p: {
+    marginBottom: theme.spacing.unit
+  },
+  titles: {
+    marginBottom: theme.spacing.unit * 1.5
   }
 });
 
 const H1 = ({ children, ...rest }) => (
-  <Typography component="h1" variant="title" {...rest}>
+  <Typography component="h1" variant="title">
     {children}
   </Typography>
 );
 const H2 = ({ children, ...rest }) => (
-  <Typography component="h2" variant="title" {...rest}>
+  <Typography component="h2" variant="title">
     {children}
   </Typography>
 );
 const H3 = ({ children, ...rest }) => (
-  <Typography component="h3" variant="title" {...rest}>
+  <Typography component="h3" variant="title">
     {children}
   </Typography>
 );
 const H4 = ({ children, ...rest }) => (
-  <Typography component="h4" variant="title" {...rest}>
+  <Typography component="h4" variant="title">
     {children}
   </Typography>
 );
 const H5 = ({ children, ...rest }) => (
-  <Typography component="h5" {...rest}>
-    {children}
-  </Typography>
+  <Typography component="h5">{children}</Typography>
 );
 const H6 = ({ children, ...rest }) => (
-  <Typography component="h6" {...rest}>
-    {children}
-  </Typography>
+  <Typography component="h6">{children}</Typography>
 );
 const P = ({ children, ...rest }) => (
-  <Typography component="p" {...rest}>
-    {children}
-  </Typography>
+  <Typography component="p">{children}</Typography>
 );
 const Li = ({ children, ...rest }) => (
-  <Typography component="li" {...rest}>
-    {children}
-  </Typography>
+  <Typography component="li">{children}</Typography>
 );
 const Ul = ({ children, ...rest }) => (
-  <Typography component="ul" {...rest}>
-    {children}
-  </Typography>
+  <Typography component="ul">{children}</Typography>
 );
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    h1: H1,
-    h2: H2,
-    h3: H3,
-    h4: H4,
-    h5: H5,
-    h6: H6,
-    p: P,
-    ul: Ul,
-    li: Li
+    h1: withStyles(styles)(H1),
+    h2: withStyles(styles)(H2),
+    h3: withStyles(styles)(H3),
+    h4: withStyles(styles)(H4),
+    h5: withStyles(styles)(H5),
+    h6: withStyles(styles)(H6),
+    p: withStyles(styles)(P),
+    ul: withStyles(styles)(Ul),
+    li: withStyles(styles)(Li),
+    strong: ({ children }) => <strong>{children}</strong>
   }
 }).Compiler;
 
@@ -90,7 +87,7 @@ class BlogPostTemplate extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Grid container className={classes.root}>
+      <Grid container className={classes.page}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
             <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
@@ -101,10 +98,8 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.subject} - {post.frontmatter.date}
             </Typography>
             <br />
-            {renderAst(post.htmlAst)}
+            <div className="content">{renderAst(post.htmlAst)}</div>
             <hr />
-            <Bio />
-
             <ul>
               {previous && (
                 <li>

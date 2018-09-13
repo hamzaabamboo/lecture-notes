@@ -9,6 +9,7 @@
   "dependencies": {
     "@material-ui/core": "^1.5.0",
     "@material-ui/icons": "^2.0.2",
+    "classnames": "^2.2.6",
     "gatsby": "^1.8.12",
     "gatsby-link": "^1.6.8",
     "gatsby-plugin-google-analytics": "^1.0.4",
@@ -16,7 +17,9 @@
     "gatsby-plugin-offline": "^1.0.4",
     "gatsby-plugin-preact": "^1.0.3",
     "gatsby-plugin-react-helmet": "^1.0.3",
+    "gatsby-plugin-sass": "^1.0.26",
     "gatsby-plugin-sharp": "^1.6.2",
+    "gatsby-remark-autolink-headers": "^1.4.19",
     "gatsby-remark-copy-linked-files": "^1.5.2",
     "gatsby-remark-images": "^1.5.4",
     "gatsby-remark-katex": "^1.0.14",

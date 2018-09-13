@@ -6,7 +6,8 @@ const { createFilePath } = require("gatsby-source-filesystem");
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
   return Promise.all([
-    createAllPages({ graphql, boundActionCreators }, createPage)
+    createAllPages({ graphql, boundActionCreators }, createPage),
+    createAllSubjects({ graphql, boundActionCreators }, createPage)
   ]);
 };
 
@@ -23,50 +24,49 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 };
 
-const createAllSubjects = ({ graphql, boundActionCreators }, createPage) => {
-  return new Promise((resolve, reject) => {
-    const blogPost = path.resolve("./src/templates/blog-post.js");
-    resolve(
-      graphql(
-        `
-          {
-            markdownRemark(fields: { slug: { eq: $slug } }) {
-              id
-              htmlAst
-              frontmatter {
-                title
-                date(formatString: "MMMM DD, YYYY")
+const createAllSubjects = async (
+  { graphql, boundActionCreators },
+  createPage
+) => {
+  const subjectList = path.resolve("./src/templates/subject-list.js");
+  try {
+    const result = await graphql(
+      `
+        {
+          allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            limit: 1000
+          ) {
+            edges {
+              node {
+                frontmatter {
+                  subject
+                }
               }
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
         }
-
-        // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
-
-        _.each(posts, (post, index) => {
-          const previous =
-            index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
-
-          createPage({
-            path: post.node.fields.slug,
-            component: blogPost,
-            context: {
-              slug: post.node.fields.slug,
-              previous,
-              next
-            }
-          });
-        });
-      })
+      `
     );
-  });
+    if (result.errors) throw 400;
+    const posts = result.data.allMarkdownRemark.edges;
+    const subjects = new Set(posts.map(e => e.node.frontmatter.subject));
+    subjects.forEach(subject => {
+      createPage({
+        path: subject
+          .toLowerCase()
+          .split(" ")
+          .join("-"),
+        component: subjectList,
+        context: {
+          subject
+        }
+      });
+    });
+    return;
+  } catch (error) {
+    throw error;
+  }
 };
 
 const createAllPages = ({ graphql, boundActionCreators }, createPage) => {
