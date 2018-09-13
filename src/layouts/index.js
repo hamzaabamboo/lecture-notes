@@ -54,9 +54,7 @@ class Template extends React.Component {
     const subjects = Array.from(
       new Set(posts.map(e => e.node.frontmatter.subject))
     );
-    const header = (
-      <TopAppBar title="Ham's lecture notes" handleClick={() => push("/")} />
-    );
+    const header = <TopAppBar title="Ham's lecture notes" />;
     const drawer = (
       <SideDrawer
         mobileOpen={mobileOpen}

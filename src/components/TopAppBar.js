@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
 import get from "lodash/get";
+import { push } from "gatsby-link";
 
 const styles = {
   root: {
@@ -30,7 +31,7 @@ const TopAppBar = props => {
             className={classes.menuButton}
             color="inherit"
             aria-label="Home"
-            onClick={() => handleClick()}
+            onClick={() => push("/")}
           >
             <HomeIcon />
           </IconButton>
