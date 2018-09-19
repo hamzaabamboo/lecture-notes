@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "path---advanced-computer-programming-02-introduction-to-python": [
-      "path---advanced-computer-programming-02-introduction-to-python-9e0edd414565306f85ef.js",
-      "path---advanced-computer-programming-02-introduction-to-python-9e0edd414565306f85ef.js.map"
+      "path---advanced-computer-programming-02-introduction-to-python-2285ec754f6a75202cfe.js",
+      "path---advanced-computer-programming-02-introduction-to-python-2285ec754f6a75202cfe.js.map"
     ],
     "path---electrical-circuit-for-ice-05-thevenin-and-norton-equivalent-circuit": [
       "path---electrical-circuit-for-ice-05-thevenin-and-norton-equivalent-circuit-a8189e9cd76a2c07080d.js",
@@ -21,8 +21,8 @@
       "path---discrete-structure-04-number-theory-contd-28fdebe26f518cce23eb.js.map"
     ],
     "path---history-of-science": [
-      "path---history-of-science-ee5809dbf2e06490903c.js",
-      "path---history-of-science-ee5809dbf2e06490903c.js.map"
+      "path---history-of-science-3d3bfb26cc9bb2d07331.js",
+      "path---history-of-science-3d3bfb26cc9bb2d07331.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-72cadd3d4242e313a763.js",
@@ -81,8 +81,8 @@
       "path---advanced-computer-programming-01-introduction-e5d24546bfdfd34b41ef.js.map"
     ],
     "path---index": [
-      "path---index-8d8e11452939d9c7cb6c.js",
-      "path---index-8d8e11452939d9c7cb6c.js.map"
+      "path---index-fa39802f63c5c0fafe1a.js",
+      "path---index-fa39802f63c5c0fafe1a.js.map"
     ],
     "path---history-of-science-04-structure-of-scientific-revolutions": [
       "path---history-of-science-04-structure-of-scientific-revolutions-8314653d218e166699ad.js",
@@ -111,12 +111,12 @@
       "path---discrete-strcuture-57a9ce4ddecf29b810fb.js.map"
     ],
     "path---history-of-science-02-history-of-astronomy": [
-      "path---history-of-science-02-history-of-astronomy-fc75aeeda0aadf4dbe6c.js",
-      "path---history-of-science-02-history-of-astronomy-fc75aeeda0aadf4dbe6c.js.map"
+      "path---history-of-science-02-history-of-astronomy-8c553044b04405f99b47.js",
+      "path---history-of-science-02-history-of-astronomy-8c553044b04405f99b47.js.map"
     ],
     "path---history-of-science-03-science-in-thai-ways-living": [
-      "path---history-of-science-03-science-in-thai-ways-living-d78b8d6276e9f38a8768.js",
-      "path---history-of-science-03-science-in-thai-ways-living-d78b8d6276e9f38a8768.js.map"
+      "path---history-of-science-03-science-in-thai-ways-living-b250804ad3b586ee91e7.js",
+      "path---history-of-science-03-science-in-thai-ways-living-b250804ad3b586ee91e7.js.map"
     ],
     "path---advanced-mathermatics-method-01-course-overview": [
       "path---advanced-mathermatics-method-01-course-overview-c7897e9aa7fee3644ff9.js",
@@ -143,14 +143,14 @@
       "path---electrical-circuit-for-ice-01-introduction-b065ae6b4251efde3f0e.js.map"
     ],
     "app": [
-      "app-f2cf8a036a58f57d20f1.js",
+      "app-00b7d658d2d655a79cf7.js",
       "build-js-styles.css",
-      "app-f2cf8a036a58f57d20f1.js.map",
+      "app-00b7d658d2d655a79cf7.js.map",
       "build-js-styles.css.map"
     ],
     "path---discrete-structure-02-pattern-of-proofs": [
-      "path---discrete-structure-02-pattern-of-proofs-fb83dd9f533e88f381b3.js",
-      "path---discrete-structure-02-pattern-of-proofs-fb83dd9f533e88f381b3.js.map"
+      "path---discrete-structure-02-pattern-of-proofs-4fc08bdb3d30434bc14a.js",
+      "path---discrete-structure-02-pattern-of-proofs-4fc08bdb3d30434bc14a.js.map"
     ],
     "path---history-of-science-01-orientation": [
       "path---history-of-science-01-orientation-3de7aa27e78d53d418ca.js",
