@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/lecture-notes",
   siteMetadata: {
     title: "Ham's Lecture notes",
     author: "Tanyawat Vittayapalotai"
