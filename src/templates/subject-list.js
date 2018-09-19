@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import { get } from "lodash";
 import SubjectCard from "../components/SubjectCard";
 import { Typography } from "@material-ui/core";
-import { push } from "gatsby-link";
+import { navigateTo } from "gatsby-link";
 
 const styles = theme => ({
   root: {
@@ -33,7 +33,7 @@ class LectureList extends React.Component {
             <SubjectCard
               title={subject}
               key={node.fields.slug}
-              onClick={() => push(node.fields.slug)}
+              onClick={() => navigateTo(node.fields.slug)}
             >
               <Typography variant="headline" component="h3">
                 {title}

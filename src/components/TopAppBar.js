@@ -6,8 +6,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import ListIcon from "@material-ui/icons/List";
-import get from "lodash/get";
-import { push } from "gatsby-link";
 
 const styles = {
   root: {

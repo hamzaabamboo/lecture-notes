@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import TopAppBar from "../components/TopAppBar";
 import withRoot from "../withRoot";
 import { withStyles } from "@material-ui/core/styles";
-import classNames from "classnames";
 import "../prism-theme.css";
 import SideDrawer from "../components/SideDrawer";
-import push from "gatsby-link";
+
 const styles = theme => ({
   root: {
     textAlign: "center",

@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/core";
 import Bio from "../components/Bio";
 import Typography from "@material-ui/core/Typography";
 import SubjectCard from "../components/SubjectCard";
-import { push } from "gatsby-link";
+import { navigateTo } from "gatsby-link";
 
 const styles = theme => ({
   root: {
@@ -33,7 +33,7 @@ class BlogIndex extends React.Component {
             <SubjectCard
               title={subject}
               key={node.fields.slug}
-              onClick={() => push(node.fields.slug)}
+              onClick={() => navigateTo(node.fields.slug)}
             >
               <Typography variant="headline" component="h3">
                 {title}

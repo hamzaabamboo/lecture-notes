@@ -10,7 +10,7 @@ import {
   Hidden
 } from "@material-ui/core";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import { push } from "gatsby-link";
+import { navigateTo } from "gatsby-link";
 
 const drawerWidth = 240;
 
@@ -40,7 +40,7 @@ class SideDrawer extends React.Component {
     const drawerContent = (
       <React.Fragment>
         <List>
-          <ListItem component="a" button onClick={() => push("/")}>
+          <ListItem component="a" button onClick={() => navigateTo("/")}>
             <ListItemText>Home</ListItemText>
           </ListItem>
           {subjects.map(e => (
@@ -48,7 +48,9 @@ class SideDrawer extends React.Component {
               key={e}
               component="a"
               button
-              onClick={() => push("/" + e.toLowerCase().replace(/\s/g, "-"))}
+              onClick={() =>
+                navigateTo("/" + e.toLowerCase().replace(/\s/g, "-"))
+              }
             >
               <ListItemText>{e}</ListItemText>
             </ListItem>

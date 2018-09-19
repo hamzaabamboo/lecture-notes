@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import { JssProvider } from "react-jss";
 import getPageContext from "./src/getPageContext";
 
-exports.replaceRenderer = ({
+export const replaceRenderer = ({
   bodyComponent,
   replaceBodyHTMLString,
   setHeadComponents
