@@ -26,25 +26,16 @@ const styles = theme => ({
   },
   left: {
     marginLeft: -240
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  "contentShift-left": {
-    marginLeft: 0
   }
 });
 
 class Template extends React.Component {
   state = {
-    mobileOpen: true
+    mobileOpen: false
   };
 
-  handleDrawerToggle = () => {
-    this.setState(state => ({ mobileOpen: !state.open }));
+  handleDrawerClose = () => {
+    this.setState({ mobileOpen: false });
   };
 
   render() {
@@ -54,23 +45,23 @@ class Template extends React.Component {
     const subjects = Array.from(
       new Set(posts.map(e => e.node.frontmatter.subject))
     );
-    const header = <TopAppBar title="Ham's lecture notes" />;
+    const header = (
+      <TopAppBar
+        title="Ham's lecture notes"
+        handleClick={() => this.setState({ mobileOpen: true })}
+      />
+    );
     const drawer = (
       <SideDrawer
         mobileOpen={mobileOpen}
-        handleDrawerToggle={this.handleDrawerToggle}
+        handleDrawerClose={this.handleDrawerClose}
         subjects={subjects}
       />
     );
     return (
       <div>
         {header}
-        <div
-          className={classNames(classes.main, classes.left, {
-            [classes.contentShift]: mobileOpen,
-            [classes[`contentShift-left`]]: mobileOpen
-          })}
-        >
+        <div className={classes.main}>
           {drawer}
           <div className={classes.content}>{children()}</div>
         </div>

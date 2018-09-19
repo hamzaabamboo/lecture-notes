@@ -12,7 +12,7 @@ import "./content.scss";
 
 const styles = theme => ({
   page: {
-    width: "80%",
+    width: "90%",
     margin: "0 auto",
     paddingTop: theme.spacing.unit * 5
   },

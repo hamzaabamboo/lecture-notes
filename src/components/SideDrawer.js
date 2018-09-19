@@ -36,7 +36,7 @@ const styles = theme => ({
 
 class SideDrawer extends React.Component {
   render() {
-    const { classes, handleDrawerToggle, subjects } = this.props;
+    const { classes, handleDrawerClose, subjects, mobileOpen } = this.props;
     const drawerContent = (
       <React.Fragment>
         <List>
@@ -62,8 +62,8 @@ class SideDrawer extends React.Component {
           <Drawer
             variant="temporary"
             anchor="left"
-            open={this.props.mobileOpen}
-            onClose={this.props.handleDrawerToggle}
+            open={mobileOpen}
+            onClose={handleDrawerClose}
             classes={{
               paper: classes.drawerPaper
             }}
