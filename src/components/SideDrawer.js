@@ -7,8 +7,8 @@ import {
   ListItemText,
   Hidden
 } from "@material-ui/core";
-import { graphql, StaticQuery } from "gatsby";
-import { navigateTo, withPrefix } from "gatsby-link";
+import { navigate, graphql, StaticQuery } from "gatsby";
+import { withPrefix } from "gatsby-link";
 
 const drawerWidth = 240;
 
@@ -61,7 +61,7 @@ class SideDrawer extends React.Component {
           <ListItem
             component="a"
             button
-            onClick={() => navigateTo(withPrefix("/"))}
+            onClick={() => navigate(withPrefix("/"))}
           >
             <ListItemText>Home</ListItemText>
           </ListItem>
@@ -71,7 +71,7 @@ class SideDrawer extends React.Component {
               component="a"
               button
               onClick={() =>
-                navigateTo(
+                navigate(
                   withPrefix("/" + e.toLowerCase().replace(/\s/g, "-"))
                 )
               }

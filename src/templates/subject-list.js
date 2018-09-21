@@ -4,10 +4,10 @@ import { withStyles } from "@material-ui/core/styles";
 import "../prism-theme.css";
 import { Helmet } from "react-helmet";
 import { get } from "lodash";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import SubjectCard from "../components/SubjectCard";
 import { Typography } from "@material-ui/core";
-import { navigateTo, withPrefix } from "gatsby-link";
+import { withPrefix } from "gatsby-link";
 
 const styles = theme => ({
   root: {
@@ -34,7 +34,7 @@ class LectureList extends React.Component {
             <SubjectCard
               title={subject}
               key={node.fields.slug}
-              onClick={() => navigateTo(withPrefix(node.fields.slug))}
+              onClick={() => navigate(withPrefix(node.fields.slug))}
             >
               <Typography variant="headline" component="h3">
                 {title}
