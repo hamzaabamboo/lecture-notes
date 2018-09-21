@@ -10,7 +10,7 @@ import { navigateTo, withPrefix } from "gatsby-link";
 
 const styles = theme => ({
   root: {
-    width: "80%",
+    width: "90%",
     margin: "0 auto",
     paddingTop: theme.spacing.unit
   }

@@ -1,3 +1,6 @@
+h1 {
+  word-break: break-word;
+}
 .content {
   blockquote {
     background-color: #eeeeee;
@@ -15,7 +18,9 @@
   h6,
   img {
     margin: 1em 0;
-    word-wrap: break-word;
+  }
+  p {
+    margin-bottom: 10px;
   }
   h1 {
     font-size: 2em;
