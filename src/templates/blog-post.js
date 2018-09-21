@@ -59,9 +59,7 @@ const P = ({ children, ...rest }) => (
 const Li = ({ children, ...rest }) => (
   <Typography component="li">{children}</Typography>
 );
-const Ul = ({ children, ...rest }) => (
-  <Typography component="ul">{children}</Typography>
-);
+const Ul = ({ children }) => <ul>{children}</ul>;
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,

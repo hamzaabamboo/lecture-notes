@@ -17,6 +17,9 @@ const styles = {
   menuButton: {
     marginLeft: -18,
     marginRight: 10
+  },
+  title: {
+    color: "white"
   }
 };
 
@@ -34,7 +37,7 @@ const TopAppBar = props => {
           >
             <ListIcon />
           </IconButton>
-          <Link to="/">
+          <Link to="/" className={classes.title}>
             <Typography variant="title" component="span" color="inherit">
               {title}
             </Typography>
