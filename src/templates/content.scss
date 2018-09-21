@@ -36,10 +36,11 @@ h1 {
   .katex-display > .katex {
     max-width: 100%;
   }
-  .katex-html {
+  .katex-inline {
     word-break: break-word;
   }
   .katex-display > .katex > .katex-html {
+    white-space: nowrap;
     &:-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       border-radius: 8px;
