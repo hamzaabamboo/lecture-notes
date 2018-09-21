@@ -13,6 +13,17 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Ham's lecture notes`,
+        short_name: `Ham's Notes`,
+        start_url: `/`,
+        background_color: `#9C27B0`,
+        theme_color: `#9C27B0`,
+        display: `standalone`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
