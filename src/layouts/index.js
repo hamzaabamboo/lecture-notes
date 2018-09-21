@@ -12,6 +12,7 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 20
   },
   content: {
+    maxWidth: "100%",
     flexGrow: 1
   },
   main: {
