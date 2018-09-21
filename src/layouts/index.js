@@ -18,6 +18,7 @@ const styles = theme => ({
   main: {
     display: "flex",
     flexDirection: "columns",
+    marginTop: '48px',
     alignItems: "stretch",
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,

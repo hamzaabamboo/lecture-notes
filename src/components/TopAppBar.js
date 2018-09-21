@@ -27,7 +27,7 @@ const TopAppBar = props => {
   const { classes, title, handleClick } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar variant="dense">
           <IconButton
             className={classes.menuButton}
