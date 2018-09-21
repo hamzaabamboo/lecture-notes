@@ -6,7 +6,7 @@ import rehypeReact from "rehype-react";
 import Typography from "@material-ui/core/Typography";
 import "katex/dist/katex.min.css";
 import { withStyles, Grid, Paper } from "@material-ui/core";
-
+import { graphql } from "gatsby";
 import "../typography.css";
 import "./content.scss";
 
@@ -81,7 +81,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = get(this.props, "data.site.siteMetadata.title");
-    const { previous, next } = this.props.pathContext;
+    const { previous, next } = this.props.pageContext;
     const { classes } = this.props;
 
     return (

@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import "../prism-theme.css";
 import { Helmet } from "react-helmet";
 import { get } from "lodash";
+import { graphql } from "gatsby";
 import SubjectCard from "../components/SubjectCard";
 import { Typography } from "@material-ui/core";
 import { navigateTo, withPrefix } from "gatsby-link";
@@ -18,7 +19,7 @@ const styles = theme => ({
 
 class LectureList extends React.Component {
   render() {
-    const { subject } = this.props.pathContext;
+    // const { subject } = this.props.pageContext;
     const siteTitle = this.props.data.site.siteMetadata.title;
     const posts = this.props.data.allMarkdownRemark.edges;
     const { classes } = this.props;

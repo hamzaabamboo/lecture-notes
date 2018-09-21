@@ -1,15 +1,13 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import {
-  Divider,
   List,
   Drawer,
-  IconButton,
   ListItem,
   ListItemText,
   Hidden
 } from "@material-ui/core";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import { graphql, StaticQuery } from "gatsby";
 import { navigateTo, withPrefix } from "gatsby-link";
 
 const drawerWidth = 240;
@@ -34,9 +32,29 @@ const styles = theme => ({
   }
 });
 
+const query = graphql`
+  {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          frontmatter {
+            subject
+          }
+        }
+      }
+    }
+  }
+`;
 class SideDrawer extends React.Component {
   render() {
-    const { classes, handleDrawerClose, subjects, mobileOpen } = this.props;
+    const { classes, handleDrawerClose, mobileOpen, data } = this.props;
+    const posts = data.allMarkdownRemark.edges;
+    const subjects = Array.from(
+      new Set(posts.map(e => e.node.frontmatter.subject))
+    );
     const drawerContent = (
       <React.Fragment>
         <List>
@@ -98,4 +116,8 @@ class SideDrawer extends React.Component {
     );
   }
 }
-export default withStyles(styles)(SideDrawer);
+
+const StyledDrawer = withStyles(styles, { withTheme: true })(SideDrawer);
+export default () => (
+  <StaticQuery query={query} render={data => <StyledDrawer data={data} />} />
+);

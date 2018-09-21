@@ -8,7 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ListIcon from "@material-ui/icons/List";
 import Link from "gatsby-link";
 
-const styles = {
+const styles = theme => ({
   root: {
     position: "relative",
     flexGrow: 1,
@@ -21,7 +21,7 @@ const styles = {
   title: {
     color: "white"
   }
-};
+});
 
 const TopAppBar = props => {
   const { classes, title, handleClick } = props;

@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "gatsby-link";
 import get from "lodash/get";
 import Helmet from "react-helmet";
 import { withStyles } from "@material-ui/core";
@@ -7,6 +6,7 @@ import Bio from "../components/Bio";
 import Typography from "@material-ui/core/Typography";
 import SubjectCard from "../components/SubjectCard";
 import { navigateTo, withPrefix } from "gatsby-link";
+import { graphql } from "gatsby";
 
 const styles = theme => ({
   root: {

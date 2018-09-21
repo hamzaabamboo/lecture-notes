@@ -18,7 +18,7 @@ const styles = theme => ({
   main: {
     display: "flex",
     flexDirection: "columns",
-    marginTop: '48px',
+    marginTop: "48px",
     alignItems: "stretch",
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
@@ -40,12 +40,9 @@ class Template extends React.Component {
   };
 
   render() {
-    const { children, classes, data } = this.props;
+    const { children, classes } = this.props;
     const { mobileOpen } = this.state;
-    const posts = data.allMarkdownRemark.edges;
-    const subjects = Array.from(
-      new Set(posts.map(e => e.node.frontmatter.subject))
-    );
+
     const header = (
       <TopAppBar
         title="Ham's lecture notes"
@@ -56,7 +53,6 @@ class Template extends React.Component {
       <SideDrawer
         mobileOpen={mobileOpen}
         handleDrawerClose={this.handleDrawerClose}
-        subjects={subjects}
       />
     );
     return (
@@ -64,7 +60,7 @@ class Template extends React.Component {
         {header}
         <div className={classes.main}>
           {drawer}
-          <div className={classes.content}>{children()}</div>
+          <div className={classes.content}>{children}</div>
         </div>
       </div>
     );
@@ -72,26 +68,9 @@ class Template extends React.Component {
 }
 
 Template.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
   location: PropTypes.object,
   route: PropTypes.object
 };
 
 export default withRoot(withStyles(styles)(Template));
-
-export const pageQuery = graphql`
-  query getSubjects {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
-    ) {
-      edges {
-        node {
-          frontmatter {
-            subject
-          }
-        }
-      }
-    }
-  }
-`;

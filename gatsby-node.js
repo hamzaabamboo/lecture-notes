@@ -3,16 +3,16 @@ const Promise = require("bluebird");
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   return Promise.all([
-    createAllPages({ graphql, boundActionCreators }, createPage),
-    createAllSubjects({ graphql, boundActionCreators }, createPage)
+    createAllPages({ graphql, actions }, createPage),
+    createAllSubjects({ graphql, actions }, createPage)
   ]);
 };
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });
@@ -25,7 +25,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 };
 
 const createAllSubjects = async (
-  { graphql, boundActionCreators },
+  { graphql, actions },
   createPage
 ) => {
   const subjectList = path.resolve("./src/templates/subject-list.js");
@@ -52,16 +52,17 @@ const createAllSubjects = async (
     const posts = result.data.allMarkdownRemark.edges;
     const subjects = new Set(posts.map(e => e.node.frontmatter.subject));
     subjects.forEach(subject => {
-      createPage({
-        path: subject
-          .toLowerCase()
-          .split(" ")
-          .join("-"),
-        component: subjectList,
-        context: {
-          subject
-        }
-      });
+      if (subject)
+        createPage({
+          path: subject
+            .toLowerCase()
+            .split(" ")
+            .join("-"),
+          component: subjectList,
+          context: {
+            subject
+          }
+        });
     });
     return;
   } catch (error) {
@@ -69,7 +70,7 @@ const createAllSubjects = async (
   }
 };
 
-const createAllPages = ({ graphql, boundActionCreators }, createPage) => {
+const createAllPages = ({ graphql }, createPage) => {
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve("./src/templates/blog-post.js");
     resolve(
