@@ -7,7 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import "katex/dist/katex.min.css";
 import { withStyles, Grid, Paper } from "@material-ui/core";
 import { graphql } from "gatsby";
-import "../typography.css";
 import "./content.scss";
 
 const styles = theme => ({
