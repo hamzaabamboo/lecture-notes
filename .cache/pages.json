@@ -1,0 +1,167 @@
+[
+    {
+        "componentChunkName": "component---src-pages-index-js",
+        "jsonName": "index",
+        "path": "/"
+    },
+    {
+        "componentChunkName": "component---src-templates-subject-list-js",
+        "jsonName": "advanced-computer-programming-d45",
+        "path": "/advanced-computer-programming"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-computer-programming-01-introduction-5e8",
+        "path": "/advanced-computer-programming/01-Introduction/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-computer-programming-02-introduction-to-python-63d",
+        "path": "/advanced-computer-programming/02-introduction-to-python/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-computer-programming-03-intro-to-python-part-2-10b",
+        "path": "/advanced-computer-programming/03-intro-to-python-part-2/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-computer-programming-04-server-side-python-303",
+        "path": "/advanced-computer-programming/04-server-side-python/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-computer-programming-05-libraries-97e",
+        "path": "/advanced-computer-programming/05-libraries/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-computer-programming-06-introduction-to-android-5f8",
+        "path": "/advanced-computer-programming/06-introduction-to-android/"
+    },
+    {
+        "componentChunkName": "component---src-templates-subject-list-js",
+        "jsonName": "advanced-mathematics-method-322",
+        "path": "/advanced-mathematics-method"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-mathematics-method-01-course-overview-bd9",
+        "path": "/advanced-mathematics-method/01-course-overview/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "advanced-mathematics-method-02-formula-sheet-4b2",
+        "path": "/advanced-mathematics-method/02-formula-sheet/"
+    },
+    {
+        "componentChunkName": "component---src-templates-subject-list-js",
+        "jsonName": "discrete-strcuture-c75",
+        "path": "/discrete-strcuture"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "discrete-structure-01-mathematical-fundamentals-statements-and-logic-d53",
+        "path": "/discrete-structure/01-mathematical-fundamentals-statements-and-logic/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "discrete-structure-02-pattern-of-proofs-357",
+        "path": "/discrete-structure/02-pattern-of-proofs/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "discrete-structure-03-number-theory-d64",
+        "path": "/discrete-structure/03-number-theory/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "discrete-structure-04-number-theory-contd-0df",
+        "path": "/discrete-structure/04-number-theory-contd/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "discrete-structure-05-number-theory-part-3-and-induction-f7e",
+        "path": "/discrete-structure/05-number-theory-part-3-and-induction/"
+    },
+    {
+        "componentChunkName": "component---src-templates-subject-list-js",
+        "jsonName": "electrical-circuit-for-ice-abb",
+        "path": "/electrical-circuit-for-ice"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "electrical-circuit-for-ice-00-course-overview-5a2",
+        "path": "/electrical-circuit-for-ice/00-course-overview/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "electrical-circuit-for-ice-01-introduction-8d7",
+        "path": "/electrical-circuit-for-ice/01-introduction/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "electrical-circuit-for-ice-02-resistive-circuits-f4c",
+        "path": "/electrical-circuit-for-ice/02-resistive-circuits/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "electrical-circuit-for-ice-03-node-voltage-analysis-816",
+        "path": "/electrical-circuit-for-ice/03-node-voltage-analysis/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "electrical-circuit-for-ice-04-mesh-current-analysis-461",
+        "path": "/electrical-circuit-for-ice/04-mesh-current-analysis/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "electrical-circuit-for-ice-05-thevenin-and-norton-equivalent-circuit-406",
+        "path": "/electrical-circuit-for-ice/05-thevenin-and-norton-equivalent-circuit/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "electrical-circuit-for-ice-06-superposition-priciple-2e5",
+        "path": "/electrical-circuit-for-ice/06-superposition-priciple/"
+    },
+    {
+        "componentChunkName": "component---src-templates-subject-list-js",
+        "jsonName": "history-of-science-7f7",
+        "path": "/history-of-science"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "history-of-science-01-orientation-aff",
+        "path": "/history-of-science/01-orientation/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "history-of-science-02-history-of-astronomy-87f",
+        "path": "/history-of-science/02-history-of-astronomy/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "history-of-science-03-science-in-thai-ways-living-06c",
+        "path": "/history-of-science/03-science-in-thai-ways-living/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "history-of-science-04-structure-of-scientific-revolutions-bee",
+        "path": "/history-of-science/04-structure-of-scientific-revolutions/"
+    },
+    {
+        "componentChunkName": "component---src-templates-blog-post-js",
+        "jsonName": "intro-to-ice-01-introduction-e61",
+        "path": "/intro-to-ice/01-Introduction/"
+    },
+    {
+        "componentChunkName": "component---src-templates-subject-list-js",
+        "jsonName": "introduction-to-ice-21f",
+        "path": "/introduction-to-ice"
+    },
+    {
+        "componentChunkName": "component---node-modules-gatsby-plugin-offline-app-shell-js",
+        "jsonName": "offline-plugin-app-shell-fallback-a30",
+        "path": "/offline-plugin-app-shell-fallback/"
+    }
+]
