@@ -17,7 +17,7 @@ module.exports = {
       options: {
         name: `Ham's lecture notes`,
         short_name: `Ham's Notes`,
-        start_url: `/`,
+        start_url: `/lecture-notes/`,
         background_color: `#9C27B0`,
         theme_color: `#9C27B0`,
         display: `standalone`
