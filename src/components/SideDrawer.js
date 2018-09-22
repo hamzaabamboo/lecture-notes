@@ -71,9 +71,7 @@ class SideDrawer extends React.Component {
               component="a"
               button
               onClick={() =>
-                navigate(
-                  withPrefix("/" + e.toLowerCase().replace(/\s/g, "-"))
-                )
+                navigate(withPrefix("/" + e.toLowerCase().replace(/\s/g, "-")))
               }
             >
               <ListItemText>{e}</ListItemText>
@@ -118,6 +116,15 @@ class SideDrawer extends React.Component {
 }
 
 const StyledDrawer = withStyles(styles, { withTheme: true })(SideDrawer);
-export default () => (
-  <StaticQuery query={query} render={data => <StyledDrawer data={data} />} />
+export default ({ mobileOpen, handleDrawerClose }) => (
+  <StaticQuery
+    query={query}
+    render={data => (
+      <StyledDrawer
+        data={data}
+        mobileOpen={mobileOpen}
+        handleDrawerClose={handleDrawerClose}
+      />
+    )}
+  />
 );

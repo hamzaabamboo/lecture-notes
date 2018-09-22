@@ -46,7 +46,10 @@ class Template extends React.Component {
     const header = (
       <TopAppBar
         title="Ham's lecture notes"
-        handleClick={() => this.setState({ mobileOpen: true })}
+        handleClick={() => {
+          this.setState({ mobileOpen: true })
+          console.log('clicked');
+        }}
       />
     );
     const drawer = (
