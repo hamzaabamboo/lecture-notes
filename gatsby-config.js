@@ -20,6 +20,7 @@ module.exports = {
         start_url: `/lecture-notes/`,
         background_color: `#9C27B0`,
         theme_color: `#9C27B0`,
+        icon: `src/images/icon.png`,
         display: `standalone`
       }
     },
