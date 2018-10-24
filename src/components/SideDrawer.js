@@ -11,6 +11,7 @@ import { navigate, graphql, StaticQuery } from "gatsby";
 import { withPrefix } from "gatsby-link";
 
 const drawerWidth = 240;
+let deferredPrompt;
 
 const styles = theme => ({
   drawerPaper: {
@@ -49,8 +50,22 @@ const query = graphql`
   }
 `;
 class SideDrawer extends React.Component {
+  state = {
+    showButton: false
+  };
+  componentDidMount() {
+    window.addEventListener("beforeinstallprompt", e => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      // Update UI notify the user they can add to home screen
+      this.setState({ showButton: true });
+    });
+  }
   render() {
     const { classes, handleDrawerClose, mobileOpen, data } = this.props;
+    const { showButton } = this.state;
     const posts = data.allMarkdownRemark.edges;
     const subjects = Array.from(
       new Set(posts.map(e => e.node.frontmatter.subject))
@@ -78,6 +93,27 @@ class SideDrawer extends React.Component {
             </ListItem>
           ))}
         </List>
+        {showButton && (
+          <ListItem
+            component="a"
+            button
+            onClick={() => {
+              // Show the prompt
+              deferredPrompt.prompt();
+              // Wait for the user to respond to the prompt
+              deferredPrompt.userChoice.then(choiceResult => {
+                if (choiceResult.outcome === "accepted") {
+                  console.log("User accepted the A2HS prompt");
+                } else {
+                  console.log("User dismissed the A2HS prompt");
+                }
+                deferredPrompt = null;
+              });
+            }}
+          >
+            <ListItemText>Add to Home screen</ListItemText>
+          </ListItem>
+        )}
       </React.Fragment>
     );
     return (

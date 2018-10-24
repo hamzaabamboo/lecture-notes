@@ -24,7 +24,10 @@ class BlogIndex extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Helmet title={siteTitle} />
+        <Helmet>
+          <title>{siteTitle}</title>
+          <meta description="Lecture notes for ice" />
+        </Helmet>
         <Bio />
         {posts.map(({ node }) => {
           const title = get(node, "frontmatter.title") || node.fields.slug;
